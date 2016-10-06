@@ -1,6 +1,6 @@
-# Redux Todos with Undo Example
+# Almost Google Alike
 
-This project template was built with [Create React App](https://github.com/facebookincubator/create-react-app).
+This project was created for web technologies course. 
 
 ## Available Scripts
 
