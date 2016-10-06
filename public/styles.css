@@ -1,0 +1,19 @@
+.note-square {
+  border: 1px solid black;
+  width: 20%;
+  min-height: 0;
+}
+
+.note-list {
+  border: 1px solid blue;
+  padding: 10px;
+  width: 50%;
+}
+
+.todo-list {
+  border: 1px solid blue;
+  padding: 10px;
+  width: 50%;
+}
+
+/*# sourceMappingURL=styles.css.map */
