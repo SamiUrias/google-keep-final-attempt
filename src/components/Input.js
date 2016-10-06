@@ -6,6 +6,7 @@ import AddNote from '../containers/AddNote';
 import AddTodo from '../containers/AddTodo';
 import TodoListContainer from '../containers/TodoListContainer';
 import Link from '../components/Link'
+import ColorPicker from './colorPicker'
 
 class InputBox extends Component{
 	constructor(){
@@ -16,7 +17,7 @@ class InputBox extends Component{
 	render(){
 		if (this.state.inputType === true){
 			return <div>
-				<Link onClick={this.changeInputType.bind(this)} active={false} children={"Change input type"}/>
+				<Link onClick={this.changeInputType.bind(this)} active={false} children={"Todos"}/>
 					<div> --- Add Note --- </div>
 					<AddNote/>
 				</div>
@@ -24,7 +25,7 @@ class InputBox extends Component{
 		else {
 			return (
 				<div>
-					<Link onClick={this.changeInputType.bind(this)} active={false} children={"Change input type"}/>
+					<Link onClick={this.changeInputType.bind(this)} active={false} children={"Notes"}/>
 					<div> --- Add Todo --- </div>
 					<TodoListContainer/>
 					<AddTodo/>
@@ -51,9 +52,12 @@ class Input extends Component {
 	render(){
 		if (this.state.inputType === 0){}
 		return (
-			<div>
-				<div>Input Component</div>
-				<InputBox />
+			<div className="input-container">
+				<div className="input-sub-container">
+					<div>Input Component</div>
+					<ColorPicker/>
+					<InputBox />
+				</div>
 			</div>
 		);
 	}

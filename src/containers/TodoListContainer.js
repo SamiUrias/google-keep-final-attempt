@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 import { addTodoList } from '../actions'
 
 
-let TodoListContainer = ({ todos, dispatch }) =>{
+let TodoListContainer = ({ todos, dispatch, color}) =>{
 	let title;
 
 	return(
@@ -17,11 +17,11 @@ let TodoListContainer = ({ todos, dispatch }) =>{
 				if (!title.value.trim()) {
 					return
 				}
-				dispatch(addTodoList(title.value, todos));
+				dispatch(addTodoList(title.value, todos, color));
 				title.value = '';
 			}}>
 				<div>
-					<span>Todo list title: </span>
+					<span>Titulo de la lista de notas: </span> <br />
 					<input ref={node => {
 						title = node
 					}} />
@@ -33,10 +33,11 @@ let TodoListContainer = ({ todos, dispatch }) =>{
 
 		</div>
 	)
-}
+};
 
 const mapStateToProps = (state) => ({
-	todos: state.todos.present
+	todos: state.todos.present,
+	color: state.color
 });
 
 TodoListContainer = connect(mapStateToProps)(TodoListContainer)

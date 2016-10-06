@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import Note from './Note'
 
-const NoteList = ({ notes }) => (
+const  NoteList = ({ notes }) => (
     <div className="note-list">
         {notes.map(note =>
             <Note

@@ -1,13 +1,17 @@
 /**
  * Created by samuel on 6/10/16.
  */
-const todoList = (state = {}, action) => {
+const todoList = (state = {}, action, date) => {
 	switch (action.type){
 		case 'ADD_TODO_LIST':
+			let time = new Date();
+			let timeString = time.getHours() + ":" + time.getMinutes()
 			return {
 				id: action.id,
 				title: action.title,
-				todos: action.todos
+				todos: action.todos,
+				color: action.color,
+				date: timeString
 			};
 			break;
 		default:

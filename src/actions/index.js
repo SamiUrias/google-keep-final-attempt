@@ -8,11 +8,13 @@ export const addTodo = (text) => ({
   text
 });
 
-export const addNote = (title = "Nota", text) => ({
+export const addNote = (title = "Nota", text, color="white") => ({
     type: 'ADD_NOTE',
     id: nextNoteId++,
     title,
-    text
+    text,
+    color
+
 });
 
 export const setVisibilityFilter = (filter) => ({
@@ -26,9 +28,19 @@ export const toggleTodo = (id) => ({
 });
 
 
-export const addTodoList = ( title, todos ) => ({
+export const addTodoList = ( title, todos, color="white" ) => ({
   type: 'ADD_TODO_LIST',
   id: nextTodoListId++,
   title,
-  todos
+  todos,
+  color
+});
+
+export const  changeColor = (color) => ({
+  type: 'CHANGE_COLOR',
+  color
+});
+
+export const clearTodos = () => ({
+  type: 'CLEAR_TODOS'
 });

@@ -6,10 +6,14 @@ import undoable, { distinctState } from 'redux-undo';
 const note = (state, action) => {
     switch (action.type){
         case 'ADD_NOTE':
+            let time = new Date();
+          let timeString = time.getHours() + ":" + time.getMinutes()
             return {
                 id: action.id,
                 title: action.title,
-                text: action.text
+                text: action.text,
+                color: action.color,
+                date: timeString
             };
         default:
             return state
@@ -19,6 +23,7 @@ const note = (state, action) => {
 const notes = (state = [], action) => {
     switch (action.type) {
         case 'ADD_NOTE':
+            console.log("Note reducer: " + action.color)
             return [
                 ...state,
                 note(undefined, action)

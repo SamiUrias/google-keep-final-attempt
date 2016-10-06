@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { addNote } from '../actions'
 
-let AddNote = ({ dispatch }) =>{
+let AddNote = ({ dispatch, color }) =>{
     let input;
     let title;
 
@@ -13,13 +13,16 @@ let AddNote = ({ dispatch }) =>{
                 if (!input.value.trim()) {
                     return
                 }
-                dispatch(addNote(title.value, input.value));
+                console.log("Color picker - color selected: " + color);
+                dispatch(addNote(title.value, input.value, color));
                 input.value = '';
                 title.value = '';
             }}>
+                <span className="input-label-style">Titulo: </span>
                 <input ref={node => {
                     title = node
                 }} /><br/>
+                <span className="input-label-style">Cuerpo: </span>
                 <input ref={node => {
                     input = node
                 }} />
@@ -32,5 +35,9 @@ let AddNote = ({ dispatch }) =>{
     )
 }
 
-AddNote = connect()(AddNote)
+const mapStateToProps = (state) => {
+    return {color: state.color}
+}
+
+AddNote = connect(mapStateToProps)(AddNote)
 export default AddNote

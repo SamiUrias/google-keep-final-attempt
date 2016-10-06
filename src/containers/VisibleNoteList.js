@@ -19,7 +19,8 @@ const getVisibleNotes = (notes, filter) => {
 }
 
 const mapStateToProps = (state) => ({
-	notes: getVisibleNotes(state.notes.present, state.visibilityFilter)
+	notes: getVisibleNotes(state.notes.present, state.visibilityFilter),
+	selectedColor: state.color
 });
 
 const VisibleNoteList = connect(mapStateToProps,)(NoteList);

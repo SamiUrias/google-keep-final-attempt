@@ -19,3 +19,32 @@
 .cursor-pointer {
   cursor: pointer;
 }
+
+.note-color-picker {
+  height: 25px;
+  width: 25px;
+}
+
+.note-color-red {
+  background-color: red;
+}
+
+.note-color-blue {
+  background-color: blue;
+}
+
+.note-color-yellow {
+  background-color: yellow;
+}
+
+.note-color-green {
+  background-color: green;
+}
+
+.float-left {
+  float: left;
+}
+
+.width-100 {
+  width: 100%;
+}
