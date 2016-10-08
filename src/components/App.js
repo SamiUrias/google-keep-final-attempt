@@ -9,7 +9,7 @@ import Input from '../components/Input'
 import TodoListContainer from '../containers/TodoListContainer'
 import ListOfTodo from '../components/ListOfTodo';
 
-const App = () => (
+const App = (store) => (
 	<div>
 		<Input/>
 		<VisibleTodoList />

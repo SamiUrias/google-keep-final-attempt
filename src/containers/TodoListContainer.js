@@ -4,7 +4,7 @@
 import React, { Componet } from 'react'
 
 import { connect } from 'react-redux'
-import { addTodoList } from '../actions'
+import { addTodoList, clearTodos } from '../actions'
 
 
 let TodoListContainer = ({ todos, dispatch, color}) =>{
@@ -17,7 +17,9 @@ let TodoListContainer = ({ todos, dispatch, color}) =>{
 				if (!title.value.trim()) {
 					return
 				}
+
 				dispatch(addTodoList(title.value, todos, color));
+				dispatch(clearTodos());
 				title.value = '';
 			}}>
 				<div>

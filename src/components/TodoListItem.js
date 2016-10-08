@@ -8,7 +8,7 @@ const TodoListItem = ({title, todos, color, date}) => (
 		<p>{date}</p>
 		<h1 className="">{title}</h1>
 		<ul>
-			{todos.map(todo =>
+			{todos.filter(t => !t.deleted).map(todo =>
 				<Todo
 					key={todo.id}
 					{...todo}

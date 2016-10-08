@@ -9,7 +9,7 @@ import reducer from './reducers'
 
 
 
-const store = createStore(reducer,);
+const store = createStore(reducer);
 // const store = createStore(reducer)
 
 
@@ -19,6 +19,5 @@ render(
   </Provider>,
   document.getElementById('root')
 
-
-)
+);
 

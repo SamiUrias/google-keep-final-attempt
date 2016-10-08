@@ -8,6 +8,11 @@ export const addTodo = (text) => ({
   text
 });
 
+export const deleteTodo = (id) => ({
+	type: 'DELETE_TODO',
+	id
+})
+
 export const addNote = (title = "Nota", text, color="white") => ({
     type: 'ADD_NOTE',
     id: nextNoteId++,

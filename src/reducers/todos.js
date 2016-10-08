@@ -6,7 +6,9 @@ const todo = (state = {}, action) => {
       return {
         id: action.id,
         text: action.text,
-        completed: false
+        completed: false,
+				deleted: false,
+				listed: false
       }
     case 'TOGGLE_TODO':
       if (state.id !== action.id) {
@@ -17,6 +19,15 @@ const todo = (state = {}, action) => {
         ...state,
         completed: !state.completed
       }
+		case 'DELETE_TODO':
+			if (state.id !== action.id) {
+				return state
+			}
+			return {
+				...state,
+				deleted: !state.deleted
+			}
+
     default:
       return state
   }
@@ -31,6 +42,7 @@ const todos = (state = [], action) => {
         todo(undefined, action)
       ]
     case 'TOGGLE_TODO':
+		case 'DELETE_TODO':
       return state.map(t =>
         todo(t, action)
       )

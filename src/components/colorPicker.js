@@ -31,7 +31,7 @@ class ColorPicker extends Component{
 }
 
 const mapStateToProps = (state) => {
-	return { color: state.color }
+	return { color: state.color,  }
 }
 
 const mapDispatchToProps = (dispatch) => {

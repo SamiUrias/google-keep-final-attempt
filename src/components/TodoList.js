@@ -1,16 +1,19 @@
 import React, { PropTypes } from 'react'
 import Todo from './Todo'
 
-const TodoList = ({ todos, onTodoClick }) => (
-  <ul>
-    {todos.map(todo =>
-      <Todo
-        key={todo.id}
-        {...todo}
-        onClick={() => onTodoClick(todo.id)}
-      />
-    )}
-  </ul>
+const TodoList = ({ todos, onTodoClick, onDeleteTodo }) => (
+ <div className="todo-list-input-box">
+   <ul>
+     {todos.map(todo =>
+       <Todo
+         key={todo.id}
+         {...todo}
+         onClick={() => onTodoClick(todo.id)}
+				 onDelete = {() => onDeleteTodo(todo.id)}
+       />
+     )}
+   </ul>
+ </div>
 )
 
 TodoList.propTypes = {
