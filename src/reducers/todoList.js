@@ -31,9 +31,7 @@ const todoLists = (state = [], action) => {
 				...state,
 				todoList(undefined, action)
 			]
-		case 'CLEAR_TODOS':
-			console.log('Clear todos');
-			return state.todos = []
+
 		default:
 			return state;
 	}

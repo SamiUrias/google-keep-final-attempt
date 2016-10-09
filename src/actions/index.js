@@ -46,6 +46,7 @@ export const  changeColor = (color) => ({
   color
 });
 
-export const clearTodos = () => ({
-  type: 'CLEAR_TODOS'
+export const clearTodos = (todos) => ({
+  type: 'CLEAR_TODOS',
+  todos
 });

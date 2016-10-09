@@ -19,7 +19,7 @@ let TodoListContainer = ({ todos, dispatch, color}) =>{
 				}
 
 				dispatch(addTodoList(title.value, todos, color));
-				dispatch(clearTodos());
+				dispatch(clearTodos(todos));
 				title.value = '';
 			}}>
 				<div>

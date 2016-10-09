@@ -5,7 +5,7 @@ import TodoList from '../components/TodoList'
 const getVisibleTodos = (todos, filter) => {
   switch (filter) {
     case 'SHOW_ALL':
-      return todos.filter(t => !t.deleted )
+      return todos.filter(t => !t.deleted ).filter(t => !t.listed)
     case 'SHOW_COMPLETED':
       return todos.filter(t => t.completed ).filter(t => !t.deleted)
     case 'SHOW_ACTIVE':

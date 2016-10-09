@@ -4,6 +4,7 @@ import notes from './notes'
 import visibilityFilter from './visibilityFilter'
 import todoList from './todoList'
 import color from './color'
+import clearTodosReducer from './clearTodos'
 
 
 
@@ -12,6 +13,7 @@ const todoApp = combineReducers({
     todos,
     notes,
   color,
+  clearTodosReducer,
   visibilityFilter
 });
 
