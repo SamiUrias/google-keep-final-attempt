@@ -4,13 +4,15 @@ import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import App from './components/App'
 import reducer from './reducers'
+import logger from './middlewares/logger'
+import { loadState, saveState   } from './localStorage';
 
+const persitedState = loadState()
+const store = createStore(reducer, persitedState, applyMiddleware(logger));
 
-
-
-
-const store = createStore(reducer);
-// const store = createStore(reducer)
+store.subscribe(() => {
+  saveState(store.getState())
+})
 
 
 render(

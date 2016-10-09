@@ -1,10 +1,12 @@
+import { v4 } from 'node-uuid'
+
 let nextTodoId = 0;
 let nextNoteId = 0;
 let nextTodoListId = 0;
 
 export const addTodo = (text) => ({
   type: 'ADD_TODO',
-  id: nextTodoId++,
+  id: v4(),
   text
 });
 
@@ -15,7 +17,7 @@ export const deleteTodo = (id) => ({
 
 export const addNote = (title = "Nota", text, color="white") => ({
     type: 'ADD_NOTE',
-    id: nextNoteId++,
+    id: v4(),
     title,
     text,
     color
@@ -33,12 +35,13 @@ export const toggleTodo = (id) => ({
 });
 
 
-export const addTodoList = ( title, todos, color="white" ) => ({
+export const addTodoList = ( title, todos, color="white",onTodoClick ) => ({
   type: 'ADD_TODO_LIST',
-  id: nextTodoListId++,
+  id: v4(),
   title,
   todos,
-  color
+  color,
+  onTodoClick
 });
 
 export const  changeColor = (color) => ({

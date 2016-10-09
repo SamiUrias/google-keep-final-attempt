@@ -4,13 +4,13 @@
 const clearTodosReducer = (state = {}, action) => {
 	switch (action.type){
 		case 'CLEAR_TODOS':
-			let k = action.todos.filter(t => !t.deleted)
-			console.log(k)
-			for (let i = 0; i<k.length; i++){
-				k[i].listed = true;
+			let todos = action.todos.filter(t => !t.deleted)
+			console.log(todos)
+			for (let i = 0; i<todos.length; i++){
+				todos[i].listed = true;
 			}
-			console.log(k)
-			return [...state, k]
+			console.log(todos)
+			return [...state, todos]
 		default:
 			return state;
 	}
