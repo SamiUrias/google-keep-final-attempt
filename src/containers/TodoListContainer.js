@@ -1,10 +1,10 @@
 /**
  * Created by samuel on 6/10/16.
  */
-import React, { Componet } from 'react'
+import React  from 'react'
 
 import { connect } from 'react-redux'
-import { addTodoList, clearTodos, toggleTodo } from '../actions'
+import { addTodoList, clearTodos,  } from '../actions'
 
 
 let TodoListContainer = ({ todos, dispatch, color, onClick, onDelete}) =>{
@@ -25,13 +25,14 @@ let TodoListContainer = ({ todos, dispatch, color, onClick, onDelete}) =>{
 			}}>
 				<div>
 					<span>Titulo de la lista de notas: </span> <br />
-					<input ref={node => {
+					<input placeholder="Titulo de la nota" ref={node => {
 						title = node
 					}} />
+					<button type="submit">
+						Add todo List
+					</button>
 				</div>
-				<button type="submit">
-					Add todo List
-				</button>
+
 			</form>
 
 		</div>

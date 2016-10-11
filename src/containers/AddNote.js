@@ -19,11 +19,11 @@ let AddNote = ({ dispatch, color }) =>{
                 title.value = '';
             }}>
                 <span className="input-label-style">Titulo: </span>
-                <input ref={node => {
+                <input placeholder="Titulo" ref={node => {
                     title = node
                 }} /><br/>
                 <span className="input-label-style">Cuerpo: </span>
-                <input ref={node => {
+                <input placeholder="Cuerpo de la nota" ref={node => {
                     input = node
                 }} />
                 <br/>

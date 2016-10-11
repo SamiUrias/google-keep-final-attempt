@@ -29,7 +29,6 @@ class InputBox extends Component{
 					<div> --- Add Todo --- </div>
 					<TodoListContainer/>
 					<AddTodo/>
-
 				</div>
 			)
 		}

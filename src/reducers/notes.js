@@ -1,13 +1,13 @@
 /**
  * Created by samuel on 25/09/16.
  */
-import undoable, { distinctState } from 'redux-undo';
+import undoable from 'redux-undo';
 
 const getActualDate = () => {
     var d = new Date(),
       seconds = d.getSeconds().toString(),
-      minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-      hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+      minutes = d.getMinutes().toString().length === 1 ? '0'+d.getMinutes() : d.getMinutes(),
+      hours = d.getHours().toString().length === 1 ? '0'+d.getHours() : d.getHours(),
       ampm = d.getHours() >= 12 ? 'pm' : 'am',
       months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
       days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
@@ -42,8 +42,6 @@ const notes = (state = [], action) => {
     }
 }
 
-const undoableNotes = undoable(notes, {
-    filter: distinctState()
-});
+const undoableNotes = undoable(notes);
 
 export default undoableNotes
